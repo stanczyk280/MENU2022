@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlMenu", "ControlMenu\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacierzMnozenie", "MacierzMnozenie\MacierzMnozenie.csproj", "{0D6DC73E-4B47-4C26-A706-20B25FAC15FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacierzWyznacznik", "MacierzWyznacznik\MacierzWyznacznik.csproj", "{DCC1105B-4A64-4462-B697-4D34A92AB9AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0D6DC73E-4B47-4C26-A706-20B25FAC15FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D6DC73E-4B47-4C26-A706-20B25FAC15FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D6DC73E-4B47-4C26-A706-20B25FAC15FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC1105B-4A64-4462-B697-4D34A92AB9AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC1105B-4A64-4462-B697-4D34A92AB9AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC1105B-4A64-4462-B697-4D34A92AB9AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC1105B-4A64-4462-B697-4D34A92AB9AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

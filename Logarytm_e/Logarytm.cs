@@ -40,11 +40,11 @@
     }
 }
 
-internal static class Program
+/*internal static class Program
 {
     private static void Main(string[] args)
     {
         Logarytm l1 = new Logarytm();
         Console.Write("Logarytm e =" + l1.ObliczLogarytm(5));
     }
-}
+}*/

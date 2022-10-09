@@ -59,7 +59,7 @@
     }
 }
 
-internal static class Program
+/*internal static class Program
 {
     private static void Main(string[] args)
     {
@@ -69,4 +69,4 @@ internal static class Program
         Console.WriteLine("32b silnia: " + s1.ObliczSilnieInt());
         Console.WriteLine("64b silnia: " + s1.ObliczSilnieLong());
     }
-}
+}*/

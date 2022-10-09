@@ -41,7 +41,7 @@
          => $"{re} + {im}i";
 }
 
-internal class Program
+/*internal class Program
 {
     private static void Main(string[] args)
     {
@@ -54,4 +54,4 @@ internal class Program
         wynik = z1 * z2;
         wynik.Wypisz();
     }
-}
+}*/

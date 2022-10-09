@@ -16,14 +16,23 @@
         {
             case "1":
                 LaunchZespolona();
+                Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
+                Console.ReadLine();
+                ControlMenu.DisplayMenu();
                 return true;
 
             case "2":
                 LaunchSilnia();
+                Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
+                Console.ReadLine();
+                ControlMenu.DisplayMenu();
                 return true;
 
             case "3":
                 LaunchLogarytm_e();
+                Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
+                Console.ReadLine();
+                ControlMenu.DisplayMenu();
                 return true;
 
             case "4":
@@ -45,7 +54,6 @@
         wynik.Wypisz();
         wynik = z1 * z2;
         wynik.Wypisz();
-        Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
     }
 
     public static void LaunchSilnia()
@@ -55,7 +63,6 @@
         Console.WriteLine("16b silnia: " + s1.ObliczSilnieShort());
         Console.WriteLine("32b silnia: " + s1.ObliczSilnieInt());
         Console.WriteLine("64b silnia: " + s1.ObliczSilnieLong());
-        Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
     }
 
     public static void LaunchLogarytm_e()
@@ -63,9 +70,6 @@
         Logarytm l1 = new Logarytm();
         Console.WriteLine("Wprowadz do ktorego n ma sie wykonac algorytm: ");
         Console.Write("Logarytm e =" + l1.ObliczLogarytm(Convert.ToInt32(Console.ReadLine())));
-        Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
-        Console.ReadLine();
-        ControlMenu.DisplayMenu();
     }
 }
 

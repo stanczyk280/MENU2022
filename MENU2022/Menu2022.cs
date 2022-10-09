@@ -2,45 +2,6 @@
 
 namespace MENU2022
 {
-    public class Zespolona
-    {
-        public double re { get; set; } = 0;
-
-        //public float re { get; set; } = 0;
-        public double im { get; set; } = 0;
-
-        //public float re { get; set; } = 0;
-
-        public Zespolona(double Re, double Im)
-        {
-            re = Re;
-            im = Im;
-        }
-
-        public static Zespolona operator +(Zespolona z)
-            => z;
-
-        public static Zespolona operator -(Zespolona z)
-            => new Zespolona(-z.re, -z.im);
-
-        public static Zespolona operator +(Zespolona z1, Zespolona z2)
-            => new Zespolona(z1.re + z2.re, z1.im + z2.im);
-
-        public static Zespolona operator +(Zespolona z, int c)
-            => new Zespolona(z.re + c, z.im);
-
-        public static Zespolona operator *(Zespolona z1, Zespolona z2)
-            => new Zespolona(z1.re * z2.re - z1.im * z2.im, z1.re * z2.im + z1.im * z2.re);
-
-        public void Wypisz()
-        {
-            Console.WriteLine(this);
-        }
-
-        public override string ToString()
-             => $"{re} + {im}i";
-    }
-
     internal class Silnia
     {
         public int Stopien { get; set; }
@@ -140,18 +101,14 @@ namespace MENU2022
     {
         private static void Main(string[] args)
         {
-            Zespolona z1 = new Zespolona(1.23456789123456789, 4 / 3);
-            Zespolona z2 = new Zespolona(1, 2);
-            Silnia s1 = new Silnia(20);
+            Console.WriteLine("Wprowadz stopien silni: ");
+            Silnia s1 = new Silnia(Convert.ToInt32(Console.ReadLine()));
+            Console.WriteLine("16b silnia: " + s1.ObliczSilnieShort());
+            Console.WriteLine("32b silnia: " + s1.ObliczSilnieInt());
+            Console.WriteLine("64b silnia: " + s1.ObliczSilnieLong());
+
             Logarytm l1 = new Logarytm();
-
-            Console.WriteLine(z1 + z2);
-            Console.WriteLine(z1 * z2);
-            Console.WriteLine(s1.ObliczSilnieShort());
-            Console.WriteLine(s1.ObliczSilnieInt());
-            Console.WriteLine(s1.ObliczSilnieLong());
-
-            Console.Write(l1.ObliczLogarytm(5));
+            Console.Write("Logarytm e =" + l1.ObliczLogarytm(5));
         }
     }
 }

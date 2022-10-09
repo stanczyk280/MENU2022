@@ -1,4 +1,4 @@
-﻿public class ControlMenu
+﻿public static class ControlMenu
 {
     public static void DisplayMenu()
     {
@@ -7,7 +7,8 @@
         Console.WriteLine("1) Zespolona");
         Console.WriteLine("2) Silnia");
         Console.WriteLine("3) Logarytm");
-        Console.WriteLine("4) Zakoncz");
+        Console.WriteLine("4) Mnozenie Macierzy");
+        Console.WriteLine("5) Zakoncz");
     }
 
     public static bool MainMenu()
@@ -15,6 +16,7 @@
         switch (Console.ReadLine())
         {
             case "1":
+                Console.Clear();
                 LaunchZespolona();
                 Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
                 Console.ReadLine();
@@ -22,6 +24,7 @@
                 return true;
 
             case "2":
+                Console.Clear();
                 LaunchSilnia();
                 Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
                 Console.ReadLine();
@@ -29,6 +32,7 @@
                 return true;
 
             case "3":
+                Console.Clear();
                 LaunchLogarytm_e();
                 Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
                 Console.ReadLine();
@@ -36,6 +40,14 @@
                 return true;
 
             case "4":
+                Console.Clear();
+                LaunchMacierzMnozenie();
+                Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
+                Console.ReadLine();
+                ControlMenu.DisplayMenu();
+                return true;
+
+            case "5":
                 Console.WriteLine("exiting...");
                 return false;
 
@@ -70,6 +82,17 @@
         Logarytm l1 = new Logarytm();
         Console.WriteLine("Wprowadz do ktorego n ma sie wykonac algorytm: ");
         Console.Write("Logarytm e =" + l1.ObliczLogarytm(Convert.ToInt32(Console.ReadLine())));
+    }
+
+    public static void LaunchMacierzMnozenie()
+    {
+        Macierz macierz = new Macierz();
+        Console.WriteLine("Macierz a:");
+        macierz.WypiszMacierz(macierz.mARows, macierz.mACols, macierz.macierzA);
+        Console.WriteLine("Macierz b:");
+        macierz.WypiszMacierz(macierz.mBRows, macierz.mBCols, macierz.macierzB);
+        Console.WriteLine("Wynik mnozenia macierzy: ");
+        macierz.PrzemnozMacierze(macierz.mARows, macierz.mACols, macierz.mBCols, macierz.macierzA, macierz.macierzB);
     }
 }
 

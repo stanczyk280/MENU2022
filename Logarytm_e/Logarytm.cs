@@ -2,19 +2,27 @@
 {
     public decimal ObliczSilnie(decimal stopien)
     {
-        decimal wynik = 1;
-        if (stopien != 0)
+        try
         {
-            for (var i = stopien; i > 1; i--)
+            decimal wynik = 1;
+            if (stopien != 0)
             {
-                wynik *= i;
+                for (var i = stopien; i > 1; i--)
+                {
+                    wynik *= i;
+                }
             }
+            if (stopien < 0)
+            {
+                throw new ArgumentException();
+            }
+            return wynik;
         }
-        if (stopien < 0)
+        catch
         {
+            Console.WriteLine("Liczba zbyt duza lub zbyt mala");
             throw new ArgumentException();
         }
-        return wynik;
     }
 
     public decimal ObliczLogarytm(decimal n)

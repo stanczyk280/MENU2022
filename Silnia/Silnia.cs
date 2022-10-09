@@ -59,7 +59,7 @@
     }
 }
 
-internal class Program
+internal static class Program
 {
     private static void Main(string[] args)
     {

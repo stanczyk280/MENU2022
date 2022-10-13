@@ -18,41 +18,31 @@
             case "1":
                 Console.Clear();
                 LaunchZespolona();
-                Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
-                Console.ReadLine();
-                ControlMenu.DisplayMenu();
+                ReturnToMenu();
                 return true;
 
             case "2":
                 Console.Clear();
                 LaunchSilnia();
-                Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
-                Console.ReadLine();
-                ControlMenu.DisplayMenu();
+                ReturnToMenu();
                 return true;
 
             case "3":
                 Console.Clear();
                 LaunchLogarytm_e();
-                Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
-                Console.ReadLine();
-                ControlMenu.DisplayMenu();
+                ReturnToMenu();
                 return true;
 
             case "4":
                 Console.Clear();
                 LaunchMacierzMnozenie();
-                Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
-                Console.ReadLine();
-                ControlMenu.DisplayMenu();
+                ReturnToMenu();
                 return true;
 
             case "5":
                 Console.Clear();
                 LaunchMacierzWyznacznik();
-                Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
-                Console.ReadLine();
-                ControlMenu.DisplayMenu();
+                ReturnToMenu();
                 return true;
 
             case "6":
@@ -62,6 +52,14 @@
             default:
                 return true;
         }
+    }
+
+    public static void ReturnToMenu()
+    {
+        Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
+        Console.ReadLine();
+        Console.Clear();
+        ControlMenu.DisplayMenu();
     }
 
     public static void LaunchZespolona()

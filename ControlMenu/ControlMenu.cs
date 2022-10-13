@@ -2,13 +2,13 @@
 {
     public static void DisplayMenu()
     {
-        Console.Clear();
         Console.WriteLine("Wybierz zadanie:");
         Console.WriteLine("1) Zespolona");
         Console.WriteLine("2) Silnia");
         Console.WriteLine("3) Logarytm");
         Console.WriteLine("4) Mnozenie Macierzy");
-        Console.WriteLine("5) Zakoncz");
+        Console.WriteLine("5) Wyznaczniki Macierzy");
+        Console.WriteLine("6) Zakoncz");
     }
 
     public static bool MainMenu()
@@ -48,6 +48,14 @@
                 return true;
 
             case "5":
+                Console.Clear();
+                LaunchMacierzWyznacznik();
+                Console.WriteLine("\nKliknij dowolny przycisk aby powrócić do menu");
+                Console.ReadLine();
+                ControlMenu.DisplayMenu();
+                return true;
+
+            case "6":
                 Console.WriteLine("exiting...");
                 return false;
 
@@ -93,6 +101,18 @@
         macierz.WypiszMacierz(macierz.mBRows, macierz.mBCols, macierz.macierzB);
         Console.WriteLine("Wynik mnozenia macierzy: ");
         macierz.PrzemnozMacierze(macierz.mARows, macierz.mACols, macierz.mBCols, macierz.macierzA, macierz.macierzB);
+    }
+
+    public static void LaunchMacierzWyznacznik()
+    {
+        MacierzWyznaczniki m = new MacierzWyznaczniki();
+        Console.WriteLine("Macierz numer 1: ");
+        m.WypiszMacierz(3, 3, m.macierz1);
+        m.WyznaczWyznacznikSarrus(m.macierz1);
+        Console.WriteLine("");
+        Console.WriteLine("Macierz numer 2: ");
+        m.WypiszMacierzDec(5, 5, m.macierz2);
+        Console.WriteLine("Rozwiniecie Laplace= " + m.RozwiniecieLaplace(5, m.macierz2));
     }
 }
 

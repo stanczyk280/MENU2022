@@ -11,9 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logarytm_e", "Logarytm_e\Lo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlMenu", "ControlMenu\ControlMenu.csproj", "{FB74F8DF-A306-43AF-B49C-AD1EF2283CA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacierzMnozenie", "MacierzMnozenie\MacierzMnozenie.csproj", "{0D6DC73E-4B47-4C26-A706-20B25FAC15FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacierzMnozenie", "MacierzMnozenie\MacierzMnozenie.csproj", "{0D6DC73E-4B47-4C26-A706-20B25FAC15FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacierzWyznacznik", "MacierzWyznacznik\MacierzWyznacznik.csproj", "{DCC1105B-4A64-4462-B697-4D34A92AB9AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacierzWyznacznik", "MacierzWyznacznik\MacierzWyznacznik.csproj", "{DCC1105B-4A64-4462-B697-4D34A92AB9AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacierzOdwrotna", "MacierzOdwrotna\MacierzOdwrotna.csproj", "{91EE0C45-A931-45B2-A04B-E21FD07AA614}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EliminacjaGaussa", "EliminacjaGaussa\EliminacjaGaussa.csproj", "{E07E2688-2B44-4B9F-BC33-E430BA5A1D2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{DCC1105B-4A64-4462-B697-4D34A92AB9AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCC1105B-4A64-4462-B697-4D34A92AB9AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCC1105B-4A64-4462-B697-4D34A92AB9AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91EE0C45-A931-45B2-A04B-E21FD07AA614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91EE0C45-A931-45B2-A04B-E21FD07AA614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91EE0C45-A931-45B2-A04B-E21FD07AA614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91EE0C45-A931-45B2-A04B-E21FD07AA614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E07E2688-2B44-4B9F-BC33-E430BA5A1D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E07E2688-2B44-4B9F-BC33-E430BA5A1D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E07E2688-2B44-4B9F-BC33-E430BA5A1D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E07E2688-2B44-4B9F-BC33-E430BA5A1D2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

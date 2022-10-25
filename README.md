@@ -10,6 +10,6 @@ Done so far:
 - Matrix multiplication
 - Determinant using Sarrus method
 - Determinant using Laplace
-In work:
+- In work:
 - Matrix inverse
 - Gauss elimination

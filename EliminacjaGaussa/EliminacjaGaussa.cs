@@ -6,74 +6,55 @@ using System.Threading.Tasks;
 
 namespace EliminacjaGaussa
 {
-    internal class EliminacjaGaussa
+    public class EliminacjaGaussa
     {
-        public static double[,] StworzMacierz(double[,] macierz)
-            => new double[macierz.Length, macierz.Length];
-        public static double[,] KopiujMaicerz(double[,] macierz)
+        public double[] GaussElimination(double[,] macierz, double[] wektor, int n)
         {
-            var n = macierz.Length;
-            double[,] macierzWynikowa = StworzMacierz(macierz);
-            for(var i=0; i<n;i++)
+            double[] results = new double[n];
+
+            double[,] tmpA = new double[n, n + 1];
+
+            for (int i = 0; i < n; i++)
             {
-                for(var j=0; j<n; j++)
+                for (int j = 0; j < n; j++)
                 {
-                    macierzWynikowa[i, j] = macierz[i, j];
+                    tmpA[i, j] = macierz[i, j];
                 }
+                tmpA[i, n] = wektor[i];
             }
-            return macierzWynikowa;
-        }
 
-        public static double[] KopiujWektor(double[] wektor)
-        {
-            double[] kopiaWektor = new double[wektor.Length];
-            for(int i=0; i<wektor.Length; i++)
-            {
-                kopiaWektor[i] = wektor[i];
-            }
-            return kopiaWektor;
-        }
+            double tmp = 0;
 
-        public static void Wyswietl(double[,] macierz)
-        {
-            var n = macierz.Length;
-            for (var i = 0; i < n; i++)
+            for (int k = 0; k < n - 1; k++)
             {
-                for (var k = 0; k < n; k++)
+                for (int i = k + 1; i < n; i++)
                 {
-                    Console.Write(macierz[i, k] + "\t");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine();
-        }
-
-        public static double[] Eliminacja(double[,] macierz, double[] wektor)
-        {
-            var n = macierz.Length;
-            double[,] macierzWynikowa = KopiujMaicerz(macierz);
-            double[] wektorKopia = KopiujWektor(wektor);
-
-            for(int i=1;i<=n-1;i++)
-            {
-                for (int j = i + 1; j <= n; j++)
-                {
-                    for (int k = i + 1; k <= n; k++)
+                    tmp = tmpA[i, k] / tmpA[k, k];
+                    for (int j = k; j < n + 1; j++)
                     {
-                        macierzWynikowa[j,k] = macierz[j,k] - (macierz[i,k] * (macierz[j,i] / macierz[i,i]));
-                    }
-                    wektorKopia[j] = wektor[j] - (wektor[i] * (macierz[j,i] / macierz[i,i]));
-                    for (int ii = 0; ii < macierzWynikowa.Length; ii++)
-                    {
-                        for (int jj = 0; jj < macierzWynikowa.Length; jj++)
-                        {
-                            macierz[ii,jj] = macierzWynikowa[ii,jj];
-                        }
-                        wektor[ii] = wektorKopia[ii];
+                        tmpA[i, j] -= tmp * tmpA[k, j];
                     }
                 }
             }
-            return wektor;
+
+            for (int k = n - 1; k >= 0; k--)
+            {
+                tmp = 0;
+                for (int j = k + 1; j < n; j++)
+                {
+                    tmp += tmpA[k, j] * results[j];
+                }
+                results[k] = (tmpA[k, n] - tmp) / tmpA[k, k];
+            }
+
+            return results;
+        }
+    }
+
+    public static class Program
+    {
+        private static void Main(string[] args)
+        {
         }
     }
 }

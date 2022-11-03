@@ -37,10 +37,10 @@
             }
             WypiszMacierz(m1Rows, m2Cols, macierzWynikowa);
         }
-        catch
+        catch (Exception ex)
         {
-            Console.WriteLine("Mnozenie macierzy jest niemozliwe");
-            throw new InvalidOperationException();
+            ex = new InvalidOperationException();
+            Console.WriteLine("Mnozenie macierzy jest niemozliwe", ex);
         }
     }
 }

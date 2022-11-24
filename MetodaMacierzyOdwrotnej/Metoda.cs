@@ -20,12 +20,8 @@ namespace MetodaMacierzyOdwrotnej
             return result;
         }
 
-        public void LUDecompozition(double[,] macierz, double[,] macierzL, double[,] macierzU, int n)
+        public void LU(double[,] macierz, double[,] macierzL, double[,] macierzU, int n)
         {
-            //for (int i = 0; i < macierzL.GetLength(0); i++)
-            //{
-            //    macierzL[i, i] = 1;
-            //}
             macierzL = MacierzJednostkowa(macierzL);
 
             double tmp;

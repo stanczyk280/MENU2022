@@ -10,6 +10,9 @@ Done so far:
 - Matrix multiplication
 - Determinant using Sarrus method
 - Determinant using Laplace
+- Crammer Rule
 - In work:
 - Matrix inverse
+- Inverse Matrix Method
 - Gauss elimination
+- Jordan Gauss elimination

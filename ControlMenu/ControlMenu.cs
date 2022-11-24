@@ -1,4 +1,6 @@
-﻿public static class ControlMenu
+﻿using MetodaCrammera;
+
+public static class ControlMenu
 {
     public static void DisplayMenu()
     {
@@ -8,6 +10,7 @@
         Console.WriteLine("3) Logarytm");
         Console.WriteLine("4) Mnozenie Macierzy");
         Console.WriteLine("5) Wyznaczniki Macierzy");
+        Console.WriteLine("7) Metoda Crammera");
         Console.WriteLine("6) Zakoncz");
     }
 
@@ -42,6 +45,11 @@
             case "5":
                 Console.Clear();
                 LaunchMacierzWyznacznik();
+                ReturnToMenu();
+                return true;
+            case "7":
+                Console.Clear();
+                LaunchCrammer();
                 ReturnToMenu();
                 return true;
 
@@ -103,14 +111,22 @@
 
     public static void LaunchMacierzWyznacznik()
     {
-        MacierzWyznaczniki m = new MacierzWyznaczniki();
         Console.WriteLine("Macierz numer 1: ");
-        m.WypiszMacierz(3, 3, m.macierz1);
-        m.WyznaczWyznacznikSarrus(m.macierz1);
+        MacierzWyznaczniki.WypiszMacierz(3, 3, MacierzWyznaczniki.macierz1);
+        MacierzWyznaczniki.WyznaczWyznacznikSarrus(MacierzWyznaczniki.macierz1);
         Console.WriteLine("");
         Console.WriteLine("Macierz numer 2: ");
-        m.WypiszMacierzDec(5, 5, m.macierz2);
-        Console.WriteLine("Rozwiniecie Laplace= " + m.RozwiniecieLaplace(5, m.macierz2));
+        MacierzWyznaczniki.WypiszMacierzDec(5, 5, MacierzWyznaczniki.macierz2);
+        Console.WriteLine("Rozwiniecie Laplace= " + MacierzWyznaczniki.RozwiniecieLaplace(MacierzWyznaczniki.macierz2));
+    }
+
+    public static void LaunchCrammer()
+    {
+        double[,] wspl = {
+                { 5, -2, 3, 21 },
+                { -2, 3, 1, -4 },
+                { -1, 2, 3, 5 }};
+        Crammer.RozwiazCrammer(wspl);
     }
 }
 

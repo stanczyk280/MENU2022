@@ -1,9 +1,9 @@
-﻿public class MacierzWyznaczniki
+﻿public static class MacierzWyznaczniki
 {
-    public int[,] macierz1 = { { 1, 3, 2 }, { 4, -1, 2 }, { 1, -1, 0 } };
-    public decimal[,] macierz2 = { { 2, 7, -1, 3, 2 }, { 0, 0, 1, 0, 1 }, { -2, 0, 7, 0, 2 }, { -3, -2, 4, 5, 3 }, { 1, 0, 0, 0, 1 } };
+    public static int[,] macierz1 = { { 1, 3, 2 }, { 4, -1, 2 }, { 1, -1, 0 } };
+    public static double[,] macierz2 = { { 2, 7, -1, 3, 2 }, { 0, 0, 1, 0, 1 }, { -2, 0, 7, 0, 2 }, { -3, -2, 4, 5, 3 }, { 1, 0, 0, 0, 1 } };
 
-    public void WypiszMacierz(int rows, int cols, int[,] macierz)
+    public static void WypiszMacierz(int rows, int cols, int[,] macierz)
     {
         for (var i = 0; i < rows; i++)
         {
@@ -15,7 +15,7 @@
         }
     }
 
-    public void WypiszMacierzDec(int rows, int cols, decimal[,] macierz)
+    public static void WypiszMacierzDec(int rows, int cols, double[,] macierz)
     {
         for (var i = 0; i < rows; i++)
         {
@@ -27,7 +27,7 @@
         }
     }
 
-    public void WyznaczWyznacznikSarrus(int[,] macierz)
+    public static void WyznaczWyznacznikSarrus(int[,] macierz)
     {
         double det = 0;
         for (var i = 0; i < 3; i++)
@@ -36,10 +36,11 @@
         Console.WriteLine("Wyznacznik macierzy metoda Sarrusa:\n detSarrus= " + det);
     }
 
-    public decimal RozwiniecieLaplace(int sizeN, decimal[,] macierz)
+    public static double RozwiniecieLaplace(double[,] macierz)
     {
-        decimal det = 0;
-        decimal[,] macierzHelper = new decimal[sizeN - 1, sizeN - 1];
+        int sizeN = macierz.GetLength(0);
+        double det = 0;
+        double[,] macierzHelper = new double[sizeN - 1, sizeN - 1];
 
         if (sizeN == 1)
         {
@@ -65,7 +66,8 @@
                     macierzHelper[j - 1, k - 1] = macierz[j, k];
                 }
             }
-            decimal temp_det = RozwiniecieLaplace(sizeN - 1, macierzHelper);
+            //double temp_det = RozwiniecieLaplace(sizeN - 1, macierzHelper);
+            double temp_det = RozwiniecieLaplace(macierzHelper);
             det += (Convert.ToBoolean(i & 1) ? -1 : 1) * macierz[0, i] * temp_det;
         }
         return det;
@@ -76,13 +78,6 @@ internal static class Program
 {
     private static void Main(string[] args)
     {
-        MacierzWyznaczniki m = new MacierzWyznaczniki();
-        Console.WriteLine("Macierz numer 1: ");
-        m.WypiszMacierz(3, 3, m.macierz1);
-        m.WyznaczWyznacznikSarrus(m.macierz1);
-        Console.WriteLine("");
-        Console.WriteLine("Macierz numer 2: ");
-        m.WypiszMacierzDec(5, 5, m.macierz2);
-        Console.WriteLine("Rozwiniecie Laplace= " + m.RozwiniecieLaplace(5, m.macierz2));
+        
     }
 }

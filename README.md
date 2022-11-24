@@ -13,4 +13,6 @@ Done so far:
 - Crammer Rule
 - In work:
 - Matrix inverse
+- Inverse Matrix Method
 - Gauss elimination
+- Jordan Gauss elimination
